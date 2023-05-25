@@ -1,0 +1,55 @@
+# Byte-compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Database files
+*.sqlite3
+*.db
+
+# Media files
+media/
+
+# Django project settings
+*.env
+*.log
+*.ini
+
+# Virtual environment
+venv/
+.env
+
+# Development and deployment files
+*.bak
+*.swp
+*.tmp
+*.pid
+*.sock
+*.DS_Store
+local_settings.py
+db.sqlite3
+
+# IDE files
+.idea/
+.vscode/
+
+# Local configurations
+*.pydevproject
+*.pyc
+
+# Ignore secret keys and sensitive information
+*.secret
+
+# Ignore pipenv and poetry files
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Ignore pytest cache
+.cache/
+
+# Ignore coverage reports
+htmlcov/
+
+node_modules
+

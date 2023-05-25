@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    {% for image in images %}
+    <div>
+        <h2>{{ image.title }}</h2>
+        <p>{{ image.description }}</p>
+        <img src="{{ image.image.url }}" alt="{{ image.title }}">
+    </div>
+{% endfor %}
+
+
+
+{% endblock %}
+
+
+
+
+
+

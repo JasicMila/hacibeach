@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page">
+    <h2>{{ page.title }}</h2>
+    {% for page_content in page.pagecontent_set.all %}
+        <div class="p-4 page-content {% if page_content.picture %}{% if page_content.text_position == page_content.LEFT %}text-left{% else %}text-right{% endif %}{% else %}text-only{% endif %}">
+            <p class="p-5">{{ page_content.text }}</p>
+            {% if page_content.picture %}
+                <img class="img-fluid img-thumbnail" src="{{ page_content.picture.url }}" alt="Page Image">
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

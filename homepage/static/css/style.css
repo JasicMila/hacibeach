@@ -1,0 +1,40 @@
+header img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.navbar {
+    background-color: #FFFCF5;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content img {
+    width: 600px;  /* Adjust as needed */
+    height: 600px; /* Adjust as needed */
+}
+
+.page-content.text-left {
+    flex-direction: row;
+}
+
+.page-content.text-right {
+    flex-direction: row-reverse;
+}
+
+.page-content.text-only {
+    justify-content: center;
+}
