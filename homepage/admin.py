@@ -1,16 +1,17 @@
 from django.contrib import admin
+import nested_admin
 from .models import ContactRequest, Page, PageContent, Image, TranslatedPageContent
 
-class TranslatedPageContentInline(admin.StackedInline):
+class TranslatedPageContentInline(nested_admin.NestedStackedInline):
     model = TranslatedPageContent
     extra = 2
 
-class PageContentInline(admin.StackedInline):
+class PageContentInline(nested_admin.NestedStackedInline):
     model = PageContent
     extra = 1
     inlines = [TranslatedPageContentInline]
 
-class PageAdmin(admin.ModelAdmin):
+class PageAdmin(nested_admin.NestedModelAdmin):
     inlines = [PageContentInline]
     list_display = ('title', 'slug', 'get_page_content')
 
@@ -19,13 +20,6 @@ class PageAdmin(admin.ModelAdmin):
 
     get_page_content.short_description = 'Page Content'
 
-@admin.register(PageContent)
-class PageContentAdmin(admin.ModelAdmin):
-    inlines = [TranslatedPageContentInline]
-    list_display = ('get_page_title', 'id')
-
-    def get_page_title(self, obj):
-        return obj.page.title
 
 admin.site.register(ContactRequest)
 admin.site.register(Page, PageAdmin)
