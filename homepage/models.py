@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import EmailValidator
 from django.utils.text import slugify
 from PIL import Image as PilImage
+from django.conf import settings
 
 
 class ContactRequest(models.Model):
@@ -40,6 +41,7 @@ class PageContent(models.Model):
     text_position = models.IntegerField(choices=POSITION_CHOICES)
     order = models.IntegerField()
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
+    language = models.CharField(max_length=2, choices=settings.LANGUAGES, default='tr')
 
     def save(self, *args, **kwargs):
         is_new = self.pk is None
@@ -54,27 +56,26 @@ class PageContent(models.Model):
                 img.save(self.picture.path)
 
         if is_new:
-            for language, _ in TranslatedPageContent.LANGUAGE_CHOICES:
-                TranslatedPageContent.objects.create(language=language, page_content=self)
+            for language, _ in settings.LANGUAGES:
+                if language != 'tr':
+                    TranslatedPageContent.objects.create(language=language, page_content=self)
 
     class Meta:
         ordering = ['order']
 
 
 class TranslatedPageContent(models.Model):
-    LANGUAGE_CHOICES = [
-        ('en', 'English'),
-        ('gr', 'German'),
-        ('tr', 'Turkish'),
 
-    ]
-
-    language = models.CharField(max_length=2, choices=LANGUAGE_CHOICES)
+    language = models.CharField(max_length=2, choices=settings.LANGUAGES)
     translated_text = models.TextField()
     page_content = models.ForeignKey(PageContent, on_delete=models.CASCADE, related_name='translations')
 
+    def __str__(self):
+        return f'{self.page_content.text} ({self.language})'
+
     class Meta:
         unique_together = ['language', 'page_content']
+
 
 
 class Image(models.Model):

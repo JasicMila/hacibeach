@@ -24,27 +24,27 @@ msgstr ""
 
 #: hacibeach/settings.py:126
 msgid "English"
-msgstr ""
+msgstr "İngilizce"
 
 #: hacibeach/settings.py:127
 msgid "German"
-msgstr ""
+msgstr "Almanca"
 
 #: homepage/templates/base.html:34
 msgid "About"
-msgstr "Turkis about"
+msgstr "Hakkında"
 
 #: homepage/templates/base.html:37
 msgid "Beach"
-msgstr ""
+msgstr "Plaj"
 
 #: homepage/templates/base.html:40
 msgid "Restaurant/Bar"
-msgstr ""
+msgstr "Yemek & Bar"
 
 #: homepage/templates/base.html:46
 msgid "Stay"
-msgstr ""
+msgstr "Konaklama"
 
 #: homepage/templates/base.html:49
 msgid "Gallery"
@@ -52,4 +52,4 @@ msgstr ""
 
 #: homepage/templates/base.html:52
 msgid "Contact"
-msgstr ""
+msgstr "Temas etmek"

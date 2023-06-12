@@ -20,36 +20,36 @@ msgstr ""
 
 #: hacibeach/settings.py:125
 msgid "Turkish"
-msgstr ""
+msgstr "Turkish"
 
 #: hacibeach/settings.py:126
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: hacibeach/settings.py:127
 msgid "German"
-msgstr ""
+msgstr "German"
 
 #: homepage/templates/base.html:34
 msgid "About"
-msgstr ""
+msgstr "About"
 
 #: homepage/templates/base.html:37
 msgid "Beach"
-msgstr ""
+msgstr "Beach"
 
 #: homepage/templates/base.html:40
 msgid "Restaurant/Bar"
-msgstr ""
+msgstr "Restaurant/Bar"
 
 #: homepage/templates/base.html:46
 msgid "Stay"
-msgstr ""
+msgstr "Stay"
 
 #: homepage/templates/base.html:49
 msgid "Gallery"
-msgstr ""
+msgstr "Gallery"
 
 #: homepage/templates/base.html:52
 msgid "Contact"
-msgstr ""
+msgstr "Contact"

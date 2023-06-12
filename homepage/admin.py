@@ -4,7 +4,7 @@ from .models import ContactRequest, Page, PageContent, Image, TranslatedPageCont
 
 class TranslatedPageContentInline(nested_admin.NestedStackedInline):
     model = TranslatedPageContent
-    extra = 2
+    extra = 1
 
 class PageContentInline(nested_admin.NestedStackedInline):
     model = PageContent
@@ -13,12 +13,17 @@ class PageContentInline(nested_admin.NestedStackedInline):
 
 class PageAdmin(nested_admin.NestedModelAdmin):
     inlines = [PageContentInline]
-    list_display = ('title', 'slug', 'get_page_content')
+    # list_display = ('title', 'slug', 'get_page_content')
+    list_display = ('title', 'slug', 'get_page_content_count')
 
-    def get_page_content(self, obj):
-        return obj.pagecontent_set.first().text
+    # def get_page_content(self, obj):
+    #     return obj.pagecontent_set.first().text
+    #
+    # get_page_content.short_description = 'Page Content'
+    def get_page_content_count(self, obj):
+        return obj.pagecontent_set.count()
 
-    get_page_content.short_description = 'Page Content'
+    get_page_content_count.short_description = 'Page Content Count'
 
 
 admin.site.register(ContactRequest)

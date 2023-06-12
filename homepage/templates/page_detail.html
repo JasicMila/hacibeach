@@ -1,16 +1,16 @@
+
 {% extends 'base.html' %}
-{% load static translation_tag %}
+{% load translation_tag i18n %}
+
 
 {% block content %}
-
 <div class="page">
     <h2>{{ page.title }}</h2>
-    {% for page_content in page.pagecontent_set.all %}
-        <div class="p-4 page-content {% if page_content.picture %}{% if page_content.text_position == page_content.LEFT %}text-left{% else %}text-right{% endif %}{% else %}text-only{% endif %}">
-            {% get_translation page_content.translations language_code as translated_text %}
-            <p class="p-5">{{ translated_text }}</p>
-            {% if page_content.picture %}
-                <img class="img-fluid img-thumbnail" src="{{ page_content.picture.url }}" alt="Page Image">
+    {% for content in page_contents %}
+        <div class="p-4 page-content {% if content.picture %}{% if content.text_position == content.LEFT %}text-left{% else %}text-right{% endif %}{% else %}text-only{% endif %}">
+            <p class="p-5">{% get_translation content content.translations language_code %}</p>
+            {% if content.picture %}
+                <img class="img-fluid img-thumbnail" src="{{ content.picture.url }}" alt="Page Image">
             {% endif %}
         </div>
     {% endfor %}

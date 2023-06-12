@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}My Site{% endblock %}</title>
+    <title>{% block title %}Hacibeach{% endblock %}</title>
     {% load static %}
     {% load i18n %}
+    {% get_current_language as current_language %}
+
 
     <!-- Add Bootstrap JS -->
     <script src="{% static 'js/popper.min.js' %}"></script>
@@ -31,27 +33,55 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='about' %}">{% trans "About" %}</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='about' %}">
+                            {% trans "About" %}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='beach' %}">{% trans "Beach" %}</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='beach' %}">
+                            {% trans "Beach" %}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'page_detail' slug='restaurant' %}">{% trans "Restaurant/Bar" %}</a>
+                        <a class="nav-link" href="{% url 'page_detail' slug='restaurant' %}">
+                            {% trans "Restaurant/Bar" %}
+                        </a>
                     </li>
                     <li>
-                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Logo" width="150"></a>
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"
+                                                                             alt="Logo" width="150"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='stay' %}">{% trans "Stay" %}</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'page_detail' slug='stay' %}">
+                            {% trans "Stay" %}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'gallery' %}">{% trans "Gallery" %}</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'gallery' %}">
+                            {% trans "Gallery" %}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
                     </li>
                 </ul>
+
+                <form action="{% url 'set_language' %}" method="post" class="d-flex">
+                    {% csrf_token %}
+                    <select name="language" class="form-select">
+                        {% for language in LANGUAGES %}
+                            {% if language.0 == LANGUAGE_CODE %}
+                            <option value="{{ language.0 }}" selected>{{ language.1 }}</option>
+                            {% else %}
+                            <option value="{{ language.0 }}">{{ language.1 }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Go" class="btn btn-outline-success">
+                </form>
+
 
             </div>
         </div>
