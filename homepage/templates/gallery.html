@@ -6,12 +6,14 @@
 
 
     {% for image in images %}
-    <div>
-        <h2>{{ image.title }}</h2>
-        <p>{{ image.description }}</p>
-        <img src="{{ image.image.url }}" alt="{{ image.title }}">
-    </div>
-{% endfor %}
+        <div>
+            <h3>{{ image.title }}</h3>
+            <img src="{{ image.image.url }}" alt="{{ image.title }}">
+            <p>{{ image.description }}</p>
+        </div>
+    {% empty %}
+        <p>No images yet.</p>
+    {% endfor %}
 
 
 

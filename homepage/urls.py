@@ -7,5 +7,6 @@ urlpatterns = [
     path('contact/', views.contact, name="contact"),
     path('page/<slug:slug>/', views.page_detail, name='page_detail'),
     path('gallery/', views.gallery, name='gallery'),
+    path('upload-image/', views.upload_image, name='upload-image'),
     path('set-language/', set_language, name='set_language'),
 ]

@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Page, Image
 from django.utils import translation
 from django.conf import settings
 from django.utils.translation import get_language
-
+from .forms import ImageForm
 
 
 
@@ -45,3 +45,13 @@ def gallery(request):
     images = Image.objects.all()
     return render(request, 'gallery.html', {'images': images})
 
+
+def upload_image(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('gallery')
+    else:
+        form = ImageForm()
+    return render(request, 'upload_image.html', {'form': form})

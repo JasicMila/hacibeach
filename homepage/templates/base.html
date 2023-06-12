@@ -68,18 +68,20 @@
                     </li>
                 </ul>
 
-                <form action="{% url 'set_language' %}" method="post" class="d-flex">
+                <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center">
                     {% csrf_token %}
-                    <select name="language" class="form-select">
-                        {% for language in LANGUAGES %}
-                            {% if language.0 == LANGUAGE_CODE %}
-                            <option value="{{ language.0 }}" selected>{{ language.1 }}</option>
-                            {% else %}
-                            <option value="{{ language.0 }}">{{ language.1 }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                    <input type="submit" value="Go" class="btn btn-outline-success">
+                    {% for language in LANGUAGES %}
+                    {% if language.0 == LANGUAGE_CODE %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="btn btn-link active">
+                        {{ language.0 }}
+                    </button>
+                    {% else %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="btn btn-link">
+                        {{ language.0 }}
+                    </button>
+                    {% endif %}
+                    {% if not forloop.last %}<span style="vertical-align: middle;">/</span>{% endif %}
+                    {% endfor %}
                 </form>
 
 

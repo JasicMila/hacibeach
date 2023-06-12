@@ -79,8 +79,8 @@ class TranslatedPageContent(models.Model):
 
 
 class Image(models.Model):
-    title = models.CharField(max_length=200, blank=True)
-    description = models.TextField(blank=True)
+    title = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='gallery')
 
     def save(self, *args, **kwargs):
