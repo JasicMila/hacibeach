@@ -4,7 +4,7 @@ from .models import Page, Image
 from django.utils import translation
 from django.conf import settings
 from django.utils.translation import get_language
-from .forms import ImageForm
+from .forms import ImageForm, ContactForm
 
 
 
@@ -13,7 +13,18 @@ def home(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data as a ContactRequest object
+        else:
+            return render(request, 'contact.html', {'form': form})
+
+        return redirect('contact_success')  # Redirect to a success page
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
 
 
 def page_detail(request, slug):

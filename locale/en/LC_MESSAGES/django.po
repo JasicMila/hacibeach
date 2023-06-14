@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 12:20+0000\n"
+"POT-Creation-Date: 2023-06-14 16:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: hacibeach/settings.py:125
-msgid "Turkish"
-msgstr "Turkish"
-
-#: hacibeach/settings.py:126
-msgid "English"
-msgstr "English"
-
-#: hacibeach/settings.py:127
-msgid "German"
-msgstr "German"
-
-#: homepage/templates/base.html:34
+#: homepage/templates/base.html:37
 msgid "About"
 msgstr "About"
 
-#: homepage/templates/base.html:37
+#: homepage/templates/base.html:42
 msgid "Beach"
 msgstr "Beach"
 
-#: homepage/templates/base.html:40
+#: homepage/templates/base.html:47
 msgid "Restaurant/Bar"
 msgstr "Restaurant/Bar"
 
-#: homepage/templates/base.html:46
+#: homepage/templates/base.html:56
 msgid "Stay"
 msgstr "Stay"
 
-#: homepage/templates/base.html:49
+#: homepage/templates/base.html:61
 msgid "Gallery"
 msgstr "Gallery"
 
-#: homepage/templates/base.html:52
+#: homepage/templates/base.html:66 homepage/templates/contact.html:10
+#: homepage/templates/contact_success.html:8
 msgid "Contact"
 msgstr "Contact"
+
+#: homepage/templates/contact.html:14
+msgid "Name"
+msgstr "Name"
+
+#: homepage/templates/contact.html:18
+msgid "Email address"
+msgstr "Email address"
+
+#: homepage/templates/contact.html:22
+msgid "Message"
+msgstr "Message"
+
+#: homepage/templates/contact.html:25
+msgid "Submit"
+msgstr "Submit"
+
+#: homepage/templates/contact_success.html:10
+msgid "Thank you for your message!"
+msgstr "Thank you for your message!"
+
+#~ msgid "Turkish"
+#~ msgstr "Turkish"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "German"
+#~ msgstr "German"

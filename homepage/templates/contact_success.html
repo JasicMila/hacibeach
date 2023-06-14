@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4">{% trans 'Contact' %}</h1>
+            <div class="alert alert-success" role="alert">
+                {% trans 'Thank you for your message!' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
