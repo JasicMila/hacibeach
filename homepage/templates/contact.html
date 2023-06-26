@@ -1,31 +1,33 @@
-{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
 
+<section id="contact" class="sticky top-0 bg-white-floral justify-center align-center min-h-screen">
+    <div class="flex w-full h-screen bg-slate-700">
+        <div class="w-1/2 h-auto bg-white-old flex items-center justify-center">
+            <div class="w-full p-12">
+                <h1 class="text-center text-3xl font-display mb-8">{% trans 'Contact' %}</h1>
+                <form method="post" class="flex flex-col">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="w-full">{% trans 'Name' %}</label>
+                        <input type="text" class="w-full rounded" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="w-full">{% trans 'Email address' %}</label>
+                        <input type="email" class="w-full rounded" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="w-full">{% trans 'Message' %}</label>
+                        <textarea class="w-full rounded" id="message" name="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit"
+                            class="p-4 text-lg border rounded-xl bg-blue text-white">{% trans 'Submit' %}</button>
+                </form>
+            </div>
+        </div>
 
-{% block content %}
-
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <h1 class="text-center mb-4">{% trans 'Contact' %}</h1>
-        <form method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="name" class="form-label">{% trans 'Name' %}</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">{% trans 'Email address' %}</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">{% trans 'Message' %}</label>
-                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
-        </form>
+        <div class="w-1/2 flex justify-center items-center text-white">
+            <h1 class="text-7xl">MAP GOES HERE</h1>
+        </div>
     </div>
-</div>
-
-
-{% endblock %}
+</section>
