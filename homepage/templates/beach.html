@@ -1,17 +1,17 @@
 {% load static %}
-<section id='beach' class="sticky top-0 flex py-16 lg:pt-0 lg:pb-0 bg-blue min-h-screen">
-    <div class="w-1/2 p-12">
+<section id='beach' class="relative md:sticky md:top-0 flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-blue min-h-screen">
+    <div class="w-full md:w-1/2 p-4 md:p-12">
         <img
-                class="object-cover w-full h-56 rounded-full md:h-96 lg:h-full"
+                class="object-cover w-full rounded md:rounded-full h-fit lg:h-full"
                 src="{% static 'img/test.jpg' %}"
                 alt=""
         />
     </div>
     
-    <div class="relative flex flex-col items-start w-1/2 max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
+    <div class="relative flex flex-col items-start w-full md:w-1/2 max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
         <div class="mb-16 lg:my-28 lg:max-w-lg lg:pr-5 mx-auto">
             <h2 class="mb-5 font-spectral text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none">
-                Haci Beach is not just a place, it's a vibe.
+                Beach: Haci Beach is not just a place, it's a vibe.
             </h2>
             <p class="pr-5 mb-5 text-base md:text-lg">
                 Named after the one and only <strong>Haci (/'ha:ji/)</strong> - a unique and recognizable

@@ -1,10 +1,10 @@
 {% load static %}
 {% load i18n %}
 
-<section id="contact" class="sticky top-0 bg-white-floral justify-center align-center min-h-screen">
-    <div class="flex w-full h-screen bg-slate-700">
-        <div class="w-1/2 h-auto bg-white-old flex items-center justify-center">
-            <div class="w-full p-12">
+<section id="contact" class="relative md:sticky md:top-0 justify-center align-center min-h-screen">
+    <div class="flex flex-col md:flex-row w-full h-screen bg-white-old p-4">
+        <div class="w-full md:w-1/2 h-auto flex items-center justify-center">
+            <div class="w-full md:p-12 mb-8">
                 <h1 class="text-center text-3xl font-display mb-8">{% trans 'Contact' %}</h1>
                 <form method="post" class="flex flex-col">
                     {% csrf_token %}
@@ -26,8 +26,12 @@
             </div>
         </div>
 
-        <div class="w-1/2 flex justify-center items-center text-white">
-            <h1 class="text-7xl">MAP GOES HERE</h1>
+        <div class="w-full md:w-1/2 flex justify-center items-center text-white">
+            <div class="overflow-hidden rounded-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12864.874294319077!2d30.3512322!3d36.2827461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c23dbeb3124a1f%3A0xbcba543a98213b19!2sHaci%20Beach!5e0!3m2!1sen!2str!4v1687770046575!5m2!1sen!2str"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
 </section>
