@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Page, Image
+from .models import Page, Image, ContactRequest
 from django.utils import translation
 from django.conf import settings
 from django.utils.translation import get_language
 from .forms import ImageForm, ContactForm
 import logging
-
+from django.contrib import messages
 
 
 def home(request):
@@ -21,8 +21,34 @@ def home(request):
         'about_page_content': about_page_content,
         'stay_page_content': stay_page_content,
         'language_code': language_code,
+        'form': None
     }
     
+    logger = logging.getLogger(__name__)
+    
+    if request.method == 'POST':
+        logger.debug('USAO 2')
+        form = ContactForm(request.POST)
+        
+        if form.is_valid():
+            # Create a new ContactRequest instance with the form data
+            contact_request = ContactRequest(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                message=form.cleaned_data['message']
+            )
+            contact_request.save()  # Save the instance to the database
+            
+            messages.success(request, 'Your contact request has been submitted.')
+        else:
+            context['form'] = form
+            
+            return render(request, 'home.html', context)
+            
+        return redirect(f'/{language_code}/#contact')  # Redirect to a success page
+    else:
+        context['form'] = ContactForm()
+        
     return render(request, 'home.html', context)
 
 
@@ -42,21 +68,6 @@ def set_translations(content, language_code):
 #     logger.debug(content)
 
     return content
-
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()  # Save the form data as a ContactRequest object
-        else:
-            return render(request, 'contact.html', {'form': form})
-
-        return redirect('contact_success')  # Redirect to a success page
-    else:
-        form = ContactForm()
-
-    return render(request, 'contact.html', {'form': form})
-
 
 def page_detail(request, slug):
     page = get_object_or_404(Page, slug=slug)

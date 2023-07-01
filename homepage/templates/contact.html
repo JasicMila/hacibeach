@@ -5,23 +5,45 @@
     <div class="flex flex-col md:flex-row w-full h-screen bg-white-old p-4">
         <div class="w-full md:w-1/2 h-auto flex items-center justify-center">
             <div class="w-full md:p-12 mb-8">
-                <h1 class="text-center text-3xl font-display mb-8">{% trans 'Contact' %}</h1>
-                <form method="post" class="flex flex-col">
+                <h1 class="text-center text-3xl font-display mb-8">{% trans 'Contact us' %}</h1>
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                
+                <form method="post" action="/{{language_code}}/" class="flex flex-col">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="name" class="w-full">{% trans 'Name' %}</label>
-                        <input type="text" class="w-full rounded" id="name" name="name" required>
+                        <input type="text" class="w-full rounded" id="name" name="name"
+                               value="{{ form.name.value|default_if_none:'' }}" required>
+                        {{ form.name.errors }}
                     </div>
                     <div class="mb-3">
                         <label for="email" class="w-full">{% trans 'Email address' %}</label>
-                        <input type="email" class="w-full rounded" id="email" name="email" required>
+                        <input type="email" class="w-full rounded" id="email" name="email"
+                               value="{{ form.email.value|default_if_none:'' }}" required>
+                        {{ form.email.errors }}
                     </div>
                     <div class="mb-3">
                         <label for="message" class="w-full">{% trans 'Message' %}</label>
-                        <textarea class="w-full rounded" id="message" name="message" rows="3" required></textarea>
+                        <textarea 
+                            class="w-full rounded" 
+                            id="message" 
+                            name="message" 
+                            rows="5"
+                            required>{{ form.message.value|default_if_none:'' }}</textarea>
+                        {{ form.message.errors }}
                     </div>
-                    <button type="submit"
-                            class="p-4 text-lg border rounded-xl bg-blue text-white">{% trans 'Submit' %}</button>
+                    <button
+                            type="submit"
+                            class="p-4 text-lg border rounded-xl bg-blue text-white">
+                        {% trans 'Submit' %}
+                    </button>
                 </form>
             </div>
         </div>

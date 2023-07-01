@@ -1,56 +1,66 @@
 {% load static %}
 {% load i18n %}
 
-<section id="stay" class="relative bg-sky-950 min-h-screen">
-    <div class="flex flex-col space-y-8 justify-center w-full max-w-7xl mx-auto p-4">
-        <p class="text-3xl text-white">
-            At Haci Beach, we believe that the best way to fully enjoy the beauty of nature is to spend the night right
-            in the heart of it. That's why we offer a range of accommodation options that allow you to experience the
-            pristine beauty of our location, located right on the Lycian Way.
-        </p>
-
-        <div class="flex flex-col md:flex-row space-y-4 md:space-x-8">
-            <div class="rounded-lg overflow-hidden bg-white shadow-md shadow-black/30">
+<section id="stay" class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-sky-900 min-h-screen">
+    <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
+        <div class="w-full lg:pr-5 mx-auto flex flex-col">
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center mb-8">
+                <p class="text-center text-xl text-sky-100 w-full">
+                    <span class="text-3xl mb-4 inline-block">
+                        At <span class="font-semibold">Haci Beach</span>, we believe that the best way to fully enjoy 
+                        the beauty of nature is to spend the night right in the heart of it.
+                    </span>
+                    <br>
+                    That's why we offer a range of accommodation options that allow you to experience the
+                    pristine beauty of our location, located right on the Lycian Way.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center">
                 <img
-                        class="object-cover w-full h-72"
+                        class="object-cover rounded-full w-64 h-64"
                         src="{% static 'img/test.jpg' %}"
-                        alt="image"
+                        alt=""
                 />
-                <div class="p-4 pb-8">
-                    <h3 class="text-5xl mb-4">Caravan</h3>
-                    <p>
-                        For those looking for a more adventurous stay, come with your own caravan. Our Caravan Park
-                        offers
-                        electricity and water connection for you. With breathtaking views of the sea and the surrounding
-                        landscape, you'll feel like a true globetrotter on the road.
-                    </p>
-                </div>
+
+                <p class="md:text-lg text-sky-100">
+                    <span class="font-special md:text-7xl text-5xl text-yellow text-center md:text-left">Caravan</span>
+                    <br>
+                    For those looking for a more adventurous stay, come with your own caravan. Our Caravan Park
+                    offers electricity and water connection for you. With breathtaking views of the sea and the surrounding
+                    landscape, you'll feel like a true globetrotter on the road.
+                </p>
             </div>
 
-            <div class="rounded-lg overflow-hidden bg-white shadow-md shadow-black/30">
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+                <p class="md:text-lg order-1 md:order-0 text-sky-100">
+                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow mt-2 text-center md:text-left">Tents</span>
+                    <br>
+                    And for those who prefer the pure camping experience, we offer tents that will allow you to
+                    fully immerse yourself in the beauty of our location.
+                    <br>
+                    With communal bathrooms and a campfire area available for your convenience, 
+                    you'll have everything you need to make your stay as enjoyable as possible.
+                </p>
+
                 <img
-                        class="object-cover w-full h-72"
+                        class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
                         src="{% static 'img/test.jpg' %}"
-                        alt="image"
+                        alt=""
                 />
-                <div class="p-4 pb-8">
-                    <h3 class="text-5xl mb-4">Tents</h3>
-                    <p>
-                        And for those who prefer the pure camping experience, we offer tents that will allow you to
-                        fully immerse yourself in the beauty of our location. With communal bathrooms and a campfire
-                        area available for your convenience, you'll have everything you need to make your stay as
-                        enjoyable as possible.
-                    </p>
-                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-start mt-12">
+                <p class="text-xl text-sky-100 w-full text-center">
+                    No matter which option you choose, a stay at Haci Beach promises to be an unforgettable experience. And to
+                    kick off your day of adventure, we provide all of our guests with a traditional Turkish breakfast each
+                    morning.
+                    <br>
+                    <br>
+                    No matter where you're waking up you can start your day off right with a hearty and healthy
+                    breakfast at Haci Beach. So why wait? Book your stay today and start planning your dream vacation in the
+                    heart of nature.
+                </p>
             </div>
         </div>
-
-        <p class="text-3xl text-white">
-            No matter which option you choose, a stay at Haci Beach promises to be an unforgettable experience. And to
-            kick off your day of adventure, we provide all of our guests with a traditional Turkish breakfast each
-            morning. No matter where you're waking up you can start your day off right with a hearty and healthy
-            breakfast at Haci Beach. So why wait? Book your stay today and start planning your dream vacation in the
-            heart of nature.
-        </p>
     </div>
 </section>
