@@ -1,7 +1,7 @@
 {% load static %}
 <section id='restaurant' class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-yellow min-h-screen">
     <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
-        <div class="w-full lg:pr-5 mx-auto flex flex-col space-x-12">
+        <div class="w-full lg:pr-5 mx-auto flex flex-col space-x-12 py-10">
             <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center mb-8">
                 <p class="text-center text-xl text-blue w-full">
                     <span class="text-3xl text-blue mb-4 inline-block">
@@ -13,7 +13,7 @@
                     refuel and recharge during your stay.
                 </p>
             </div>
-            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center">
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4  !ml-0 items-center">
                 <img
                         class="object-cover rounded-full w-64 h-64"
                         src="{% static 'img/test.jpg' %}"
@@ -21,7 +21,7 @@
                 />
 
                 <p class="md:text-lg text-blue">
-                    <span class="font-special md:text-7xl text-5xl text-yellow-kaki text-center md:text-left">Market</span>
+                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Market</span>
                     <br>
                     For those who like to keep things simple, our little market has everything you need to stock up for
                     a day of hiking or camping. With fresh fruits and vegetables straight from the farmers of the local
@@ -47,22 +47,24 @@
                         alt=""
                 />
             </div>
-        </div>
 
-        <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
-            <img
-                    class="object-cover rounded-full w-64 h-64"
-                    src="{% static 'img/test.jpg' %}"
-                    alt=""
-            />
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+                <img
+                        class="object-cover rounded-full w-64 h-64"
+                        src="{% static 'img/test.jpg' %}"
+                        alt=""
+                />
 
-            <p class="md:text-lg text-blue">
-                <span class="font-special text-7xl text-yellow-kaki">Bar</span>
-                <br>
-                But the real star of the show? Our bar, of course. From perfectly mixed Negronis to frozen strawberry
-                daiquiris during happy hour, our cocktails are the perfect accompaniment to a stunning sunset. And for
-                those who need a little boost in the morning, our freshly brewed coffee is sure to do the trick.
-            </p>
+                <p class="md:text-lg text-blue">
+                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Bar</span>
+                    <br>
+                    But the real star of the show? Our bar, of course. From perfectly mixed Negronis to frozen
+                    strawberry
+                    daiquiris during happy hour, our cocktails are the perfect accompaniment to a stunning sunset. And
+                    for
+                    those who need a little boost in the morning, our freshly brewed coffee is sure to do the trick.
+                </p>
+            </div>
         </div>
     </div>
 </section>
