@@ -5,29 +5,18 @@
              fill="#FFFCF5" preserveAspectRatio="none slice">
             <path d="M50 0H100L50 100H0L50 0Z"></path>
         </svg>
-        <img
-                class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-                src="{% static 'img/test.jpg' %}"
-                alt=""
-        />
+        {% if content.picture %}
+            <img 
+                class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full" 
+                src="{{ content.picture.url }}"
+                alt="Haci"
+            >
+        {% endif %}
+        
     </div>
     <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
         <div class="md:mb-16 lg:my-28 lg:max-w-lg lg:pr-5">
-            <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                About: Haci Beach is not just a place, it's a vibe.
-            </h2>
-            <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-                Named after the one and only <strong>Haci (/'ha:ji/)</strong> - a unique and recognizable
-                individual - this hidden gem was discovered during one of his weekend road trips. <br><br>As a seasoned
-                hospitality
-                expert with years of experience running different types of restaurants and Meyhanes in the city center,
-                Haci
-                was yearning for a true paradise off the beaten track. And boy, did he find it! Haci Beach is now a
-                one-of-a-kind destination that embodies his personality and passion for hospitality. So come on over and
-                hang out at the fire pit with a glass of raki, and don't forget to have a chat with Haci. And if you
-                want to
-                know what he looks like, just take a glance at our logo - you'll spot him immediately!
-            </p>
+            {{ content.translated_text|safe }}
         </div>
     </div>
 </section>

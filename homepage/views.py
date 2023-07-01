@@ -5,12 +5,43 @@ from django.utils import translation
 from django.conf import settings
 from django.utils.translation import get_language
 from .forms import ImageForm, ContactForm
+import logging
 
 
 
 def home(request):
-    return render(request, 'home.html')
+    language_code = translation.get_language_from_request(request, check_path=True)
+    about = Page.objects.get(slug='about')
+    about_page_content = set_translations(about.pagecontent_set.first(), language_code)
+    
+    stay = Page.objects.get(slug='stay')
+    stay_page_content = set_translations(about.pagecontent_set.first(), language_code)
+    
+    context = {
+        'about_page_content': about_page_content,
+        'stay_page_content': stay_page_content,
+        'language_code': language_code,
+    }
+    
+    return render(request, 'home.html', context)
 
+
+def set_translations(content, language_code):
+    # Now let's find the appropriate translations
+    if language_code == 'tr':  # Turkish text is not stored as a translation
+        content.translated_text = content.text
+    else:
+        translated_content = content.translations.filter(language=language_code).first()
+        if translated_content:
+            content.translated_text = translated_content.translated_text
+        else:
+            # If there is no translation in the chosen language, load the Turkish version
+            content.translated_text = content.text
+
+#     logger = logging.getLogger(__name__)
+#     logger.debug(content)
+
+    return content
 
 def contact(request):
     if request.method == 'POST':

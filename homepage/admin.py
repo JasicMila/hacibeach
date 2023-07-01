@@ -4,11 +4,11 @@ from .models import ContactRequest, Page, PageContent, Image, TranslatedPageCont
 
 class TranslatedPageContentInline(nested_admin.NestedStackedInline):
     model = TranslatedPageContent
-    extra = 1
+    extra = 0
 
 class PageContentInline(nested_admin.NestedStackedInline):
     model = PageContent
-    extra = 1
+    extra = 0
     inlines = [TranslatedPageContentInline]
 
 class PageAdmin(nested_admin.NestedModelAdmin):

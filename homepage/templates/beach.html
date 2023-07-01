@@ -1,30 +1,57 @@
 {% load static %}
 <section id='beach' class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-blue min-h-screen">
-    <div class="w-full md:w-1/2 p-4 md:p-12">
-        <img
-                class="object-cover w-full rounded md:rounded-full h-fit lg:h-full"
-                src="{% static 'img/test.jpg' %}"
-                alt=""
-        />
-    </div>
-    
-    <div class="relative flex flex-col items-start w-full md:w-1/2 max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
-        <div class="mb-16 lg:my-28 lg:max-w-lg lg:pr-5 mx-auto">
-            <h2 class="mb-5 font-spectral text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none">
-                Beach: Haci Beach is not just a place, it's a vibe.
-            </h2>
-            <p class="pr-5 mb-5 text-base md:text-lg">
-                Named after the one and only <strong>Haci (/'ha:ji/)</strong> - a unique and recognizable
-                individual - this hidden gem was discovered during one of his weekend road trips. <br><br>As a seasoned
-                hospitality
-                expert with years of experience running different types of restaurants and Meyhanes in the city center,
-                Haci
-                was yearning for a true paradise off the beaten track. And boy, did he find it! Haci Beach is now a
-                one-of-a-kind destination that embodies his personality and passion for hospitality. So come on over and
-                hang out at the fire pit with a glass of raki, and don't forget to have a chat with Haci. And if you
-                want to
-                know what he looks like, just take a glance at our logo - you'll spot him immediately!
-            </p>
+    <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
+        <div class="w-full lg:pr-5 mx-auto flex flex-col space-x-12">
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center">
+                <img
+                        class="object-cover rounded-full w-64 h-64"
+                        src="{% static 'img/test.jpg' %}"
+                        alt=""
+                />
+
+                <p class="text-base">
+                    <span class="font-special md:text-7xl text-5xl text-blue-light text-center md:text-left">Boheme-style beach bar</span>
+                    <br>
+                    that boasts kilometres of pristine sandy beach and
+                    crystal-clear waters. Relax and unwind on our sunbeds and under our umbrellas while enjoying the warm
+                    sunshine. Sip on a refreshing cocktail from our beach bar and soak up the breathtaking views of the
+                    beautiful coastline.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+                <p class="text-base md:text-lg order-1 md:order-0">
+                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-blue-light mt-2 text-center md:text-left">Feeling hungry?</span> 
+                    <br>
+                    We offer a snack menu with delicious options, including healthy snack choices and
+                    breakfast options to start your day off right. Our restaurant and bar offer an eclectic mix of tasty
+                    dishes and drinks that will satisfy all of your cravings.
+                    As the day draws to a close, join us for sundowners with chill-out music and our famous cocktails. Our
+                    expert bartenders will mix up the perfect drink to enjoy while you watch the sunset over the horizon.
+                </p>
+
+                <img
+                    class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
+                    src="{% static 'img/test.jpg' %}"
+                    alt=""
+                />
+            </div>
+
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+                <img
+                        class="object-cover rounded-full w-64 h-64"
+                        src="{% static 'img/test.jpg' %}"
+                        alt=""
+                />
+                
+                <p class="text-base md:text-lg">
+                    <span class="font-special text-7xl text-blue-light">Windy days?</span> 
+                    <br>
+                    Our beach is the perfect spot for kitesurfing. We have a designated area where you can
+                    pump and launch your kite safely. And if you're an early riser, grab a SUP and paddle along the
+                    beautiful coastline for a peaceful and invigorating start to your day.
+                </p>
+            </div>
         </div>
     </div>
 </section>

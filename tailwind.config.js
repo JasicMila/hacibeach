@@ -4,10 +4,15 @@ module.exports = {
   theme: {
     fontFamily: {
       'display': ['Spectral', 'sans-serif'],
+      'special': ['Bayshore', 'sans-serif'],
     },
     extend: {
       colors: {
-        blue: "#252750",
+        blue: {
+          DEFAULT: "#252750",
+          light: "#afb3ff",
+          baby: '#76A1FF',
+        },
         white: {
           DEFAULT: "#FFFFFF",
           floral: '#FEFBF4',
@@ -18,6 +23,7 @@ module.exports = {
         yellow: {
           DEFAULT: '#FFD476',
           light: '#FDFBEC',
+          kaki: '#997628',
         }
       }
     },

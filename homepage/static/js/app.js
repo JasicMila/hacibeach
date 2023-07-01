@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function closeNavigation() {
         navigation.classList.remove('opacity-100');
         navigation.classList.add('opacity-0');
+        navigation.classList.add('pointer-events-none');
     }
     
     // Add click event listener to the toggle button
@@ -18,7 +19,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(navigation.classList.contains('opacity-0')) {
             // If so, make it visible
             navigation.classList.remove('opacity-0');
+            navigation.classList.remove('pointer-events-none');
             navigation.classList.add('opacity-100');
+            navigation.classList.add('pointer-events-auto');
         } else {
             // Otherwise, make it invisible
             closeNavigation()

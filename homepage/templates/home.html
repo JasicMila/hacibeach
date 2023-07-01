@@ -4,9 +4,9 @@
 
 {% block content %}
 {% include 'hero.html' %}
-{% include 'about.html' %}
+{% include 'about.html' with content=about_page_content %}
 {% include 'beach.html' %}
 {% include 'restaurant.html' %}
-{% include 'stay.html' %}
+{% include 'stay.html' with content=stay_page_content %}
 {% include 'contact.html' %}
 {% endblock %}

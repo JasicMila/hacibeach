@@ -50,8 +50,8 @@ class PageContent(models.Model):
         if self.picture:
             img = PilImage.open(self.picture.path)
 
-            if img.height > 600 or img.width > 600:
-                output_size = (600, 600)
+            if img.height > 1100 or img.width > 1100:
+                output_size = (1100, 1100)
                 img.thumbnail(output_size)
                 img.save(self.picture.path)
 

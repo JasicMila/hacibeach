@@ -1,60 +1,68 @@
 {% load static %}
-<section id='restaurant' class="relative flex flex-col bg-slate-200 min-h-screen">
+<section id='restaurant' class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-yellow min-h-screen">
+    <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
+        <div class="w-full lg:pr-5 mx-auto flex flex-col space-x-12">
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center mb-8">
+                <p class="text-center text-xl text-blue w-full">
+                    <span class="text-3xl text-blue mb-4 inline-block">
+                        At <span class="font-semibold">Haci Beach</span>, we know that good food and drink are just as essential to a great vacation as
+                        stunning scenery and sunny beaches.
+                    </span>
+                    <br>
+                    That's why our restaurant and bar are the perfect place to
+                    refuel and recharge during your stay.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center">
+                <img
+                        class="object-cover rounded-full w-64 h-64"
+                        src="{% static 'img/test.jpg' %}"
+                        alt=""
+                />
 
-    <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-blue">
-        <div class="flex flex-col space-y-4 max-w-7xl lg:my-10 h-full lg:pr-5 mx-auto pt-10 rounded-2xl text-xl">
-            <p class="mb-5 font-spectral text-l tracking-tight sm:leading-none">
-                At Haci Beach, we know that good food and drink are just as essential to a great vacation as stunning
-                scenery and sunny beaches. That's why our restaurant and bar are the perfect place to refuel and
-                recharge during your stay.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div>
-                    <h3>Market</h3>
-                    <p>
-                        For those who like to keep things simple, our little market has everything you need to stock up
-                        for
-                        a
-                        day of hiking or camping. With fresh fruits and vegetables straight from the farmers of the
-                        local
-                        village, you can be sure you're fueling your body with the best.
-                    </p>
-                </div>
+                <p class="text-blue">
+                    <span class="font-special md:text-7xl text-5xl text-yellow-kaki text-center md:text-left">Market</span>
+                    <br>
+                    For those who like to keep things simple, our little market has everything you need to stock up for
+                    a day of hiking or camping. With fresh fruits and vegetables straight from the farmers of the local
+                    village, you can be sure you're fueling your body with the best.
+                </p>
+            </div>
 
-                <div>
-                    <h3>Restaurant</h3>
-                    <p>
-                        And for those who prefer a bit more variety, our restaurant offers delicious options all day
-                        long.
-                        Start your day with a typical Turkish breakfast featuring omelettes or a refreshing smoothie
-                        bowl.
-                        As
-                        you soak up the sun on the beach, enjoy a fresh sandwich or a crisp salad from our lunch menu.
-                        And
-                        when
-                        evening rolls around, indulge in the catch of the day paired perfectly with a glass of raki.
-                    </p>
-                </div>
-                <div>
-                    <h3>Bar</h3>
-                    <p>
-                        But the real star of the show? Our bar, of course. From perfectly mixed Negronis to frozen
-                        strawberry
-                        daiquiris during happy hour, our cocktails are the perfect accompaniment to a stunning sunset.
-                        And
-                        for
-                        those who need a little boost in the morning, our freshly brewed coffee is sure to do the trick.
-                    </p>
-                </div>
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+                <p class="md:text-lg order-1 md:order-0 text-blue">
+                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Restaurant</span>
+                    <br>
+                    And for those who prefer a bit more variety, our restaurant offers delicious options all day long.
+                    <br>
+                    Start your day with a typical Turkish breakfast featuring omelettes or a refreshing smoothie bowl.
+                    As you soak up the sun on the beach, enjoy a fresh sandwich or a crisp salad from our lunch menu.
+                    And when evening rolls around, indulge in the catch of the day paired perfectly with a glass of
+                    raki.
+                </p>
+
+                <img
+                        class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
+                        src="{% static 'img/test.jpg' %}"
+                        alt=""
+                />
             </div>
         </div>
-    </div>
 
-    <div class="w-full max-w-7xl mx-auto pb-10">
-        <img
-                class="object-cover w-full h-56 md:h-96 lg:h-full rounded"
-                src="{% static 'img/test.jpg' %}"
-                alt=""
-        />
+        <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
+            <img
+                    class="object-cover rounded-full w-64 h-64"
+                    src="{% static 'img/test.jpg' %}"
+                    alt=""
+            />
+
+            <p class="md:text-lg text-blue">
+                <span class="font-special text-7xl text-yellow-kaki">Bar</span>
+                <br>
+                But the real star of the show? Our bar, of course. From perfectly mixed Negronis to frozen strawberry
+                daiquiris during happy hour, our cocktails are the perfect accompaniment to a stunning sunset. And for
+                those who need a little boost in the morning, our freshly brewed coffee is sure to do the trick.
+            </p>
+        </div>
     </div>
 </section>
