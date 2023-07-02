@@ -160,7 +160,7 @@ LOCALE_PATHS = [
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/hacibeach/hacibeach/staticfiles'
+STATIC_ROOT = '/Users/sasa/projects/hacibeach/staticfiles'
 
 
 STATICFILES_DIRS = [

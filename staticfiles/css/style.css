@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Bayshore';
+    src: url('/static/fonts/bayshore.woff2') format('woff2'),
+}
+
+.errorlist li {
+    color: #fa0000;
+    font-size: 14px;
+}   
+
+.messages {
+    border: 1px solid #1da218;
+    padding: 20px;
+    border-radius: 10px;
+    background: #79f0a7;
+    text-align: center;
+    margin-bottom: 20px;
+}
