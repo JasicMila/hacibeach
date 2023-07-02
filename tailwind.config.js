@@ -26,6 +26,10 @@ module.exports = {
     'text-base',
     'text-gray-700',
     'md:text-lg',
+    'order-0',
+    'order-1',
+    'md:order-0',
+    'md:order-1',
   ],
   theme: {
     fontFamily: {
