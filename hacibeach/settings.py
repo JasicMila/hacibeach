@@ -29,8 +29,7 @@ SECRET_KEY = 'django-insecure-mvy4@0&_k$0n$!2fip$xgybkabqd9r_wdpl%*w$j2s%l(2c1h0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hacibeach.com', 'www.hacibeach.com']
-
+ALLOWED_HOSTS = ['www.hacibeach.com', 'hacibeach.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
