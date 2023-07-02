@@ -1,40 +1,22 @@
-header img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Bayshore';
+    src: url('/static/fonts/bayshore.woff2') format('woff2'),
 }
 
-.navbar {
-    background-color: #FFFCF5;
-}
+.errorlist li {
+    color: #fa0000;
+    font-size: 14px;
+}   
 
-.nav-item {
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.page-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.page-content img {
-    width: 600px;  /* Adjust as needed */
-    height: 600px; /* Adjust as needed */
-}
-
-.page-content.text-left {
-    flex-direction: row;
-}
-
-.page-content.text-right {
-    flex-direction: row-reverse;
-}
-
-.page-content.text-only {
-    justify-content: center;
+.messages {
+    border: 1px solid #1da218;
+    padding: 20px;
+    border-radius: 10px;
+    background: #79f0a7;
+    text-align: center;
+    margin-bottom: 20px;
 }

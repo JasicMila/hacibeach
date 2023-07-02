@@ -1,0 +1,36 @@
+{% load static %}
+{% load i18n %}
+
+<section id="stay" class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-sky-900 min-h-screen">
+    <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
+        <div class="w-full lg:pr-5 mx-auto flex flex-col py-10">
+            {% for content in stay_contents %}
+            {% if content.text_position == content.CENTER %}
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center {% if content.order == 1%}mb-8{%else%}mt-8{%endif%}">
+                {{content.translated_text|safe}}
+            </div>
+            {% else %}
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 items-center {% if content.order > 1 %}!ml-0{% endif %}">
+                {% if content.picture and content.text_position == content.RIGHT %}
+                <img
+                        class="object-cover rounded-full w-64 h-64"
+                        src="{{ content.picture.url }}"
+                        alt=""
+                />
+                {% endif %}
+
+                {{ content.translated_text|safe }}
+
+                {% if content.picture and content.text_position == content.LEFT %}
+                <img
+                        class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
+                        src="{{ content.picture.url }}"
+                        alt=""
+                />
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

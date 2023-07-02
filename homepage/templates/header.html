@@ -1,0 +1,73 @@
+{% load static %}
+{% load i18n %}
+<header class="bg-white-light fixed w-full top-0 transition-transform duration-300 ease-in-out z-50" id="main-header">
+    <div class="text-blue mx-auto px-4 relative z-50">
+        <div class="flex items-center justify-center">
+            <!-- Logo -->
+            <div class="flex items-center justify-center mr-16">
+                <a href="/">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo" class="w-40">
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden ml-auto">
+                <button type="button" class="block text-blue hover:text-blue-dark focus:text-blue-dark focus:outline-none js-toggle-navigation">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Left links -->
+            <div class="js-main-links hidden lg:flex items-center space-x-12 text-xl">
+                <a href="#about">{% trans "About" %}</a>
+                <a href="#beach">{% trans "Beach" %}</a>
+                <a href="#restaurant">{% trans "Restaurant/Bar" %}</a>
+                <a href="#stay">{% trans "Stay" %}</a>
+                <a href="#contact">{% trans "Contact" %}</a>
+            </div>
+
+            <!-- Language links -->
+            <div class="hidden lg:block ml-auto">
+                <form action="{% url 'set_language' %}" method="post" class="flex items-center justify-center space-x-4">
+                    {% csrf_token %}
+                    {% for language in LANGUAGES %}
+                    {% if language.0 == LANGUAGE_CODE %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="">
+                        {{ language.0 }}
+                    </button>
+                    {% else %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="">
+                        {{ language.0 }}
+                    </button>
+                    {% endif %}
+                    {% if not forloop.last %}<span style="vertical-align: middle;">/</span>{% endif %}
+                    {% endfor %}
+                </form>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div class="p-6 border-t bg-white-light absolute top-full w-full transition-all opacity-0 pointer-events-none js-navigation">
+                <a href="#about" class="block px-2 py-1 text-lg text-blue">{% trans "About" %}</a>
+                <a href="#beach" class="block px-2 py-1 mt-1 text-lg text-blue">{% trans "Beach" %}</a>
+                <a href="#restaurant" class="block px-2 py-1 mt-1 text-lg text-blue">{% trans "Restaurant/Bar" %}</a>
+                <a href="#stay" class="block px-2 py-1 mt-1 text-lg text-blue">{% trans "Stay" %}</a>
+                <a href="#contact" class="block px-2 py-1 mt-1 text-lg text-blue">{% trans "Contact" %}</a>
+
+                <form action="{% url 'set_language' %}" method="post" class="flex items-center justify-start space-y-1 mt-8">
+                    {% csrf_token %}
+                    {% for language in LANGUAGES %}
+                    {% if language.0 == LANGUAGE_CODE %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="px-2 py-1 text-left">
+                        {{ language.0 }}
+                    </button>
+                    {% else %}
+                    <button type="submit" name="language" value="{{ language.0 }}" class="px-2 py-1 text-left">
+                        {{ language.0 }}
+                    </button>
+                    {% endif %}
+                    {% if not forloop.last %}<span style="vertical-align: middle;">/</span>{% endif %}
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
