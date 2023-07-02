@@ -160,7 +160,7 @@ LOCALE_PATHS = [
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/Users/jasic/work/hacibeach/hacibeach/staticfiles'
+STATIC_ROOT = '/hacibeach/hacibeach/staticfiles'
 
 
 STATICFILES_DIRS = [
