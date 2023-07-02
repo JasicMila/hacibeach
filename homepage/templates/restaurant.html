@@ -2,69 +2,33 @@
 <section id='restaurant' class="relative flex flex-col md:flex-row py-16 lg:pt-0 lg:pb-0 bg-yellow min-h-screen">
     <div class="relative flex flex-col justify-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl text-white">
         <div class="w-full lg:pr-5 mx-auto flex flex-col space-x-12 py-10">
-            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center mb-8">
-                <p class="text-center text-xl text-blue w-full">
-                    <span class="text-3xl text-blue mb-4 inline-block">
-                        At <span class="font-semibold">Haci Beach</span>, we know that good food and drink are just as essential to a great vacation as
-                        stunning scenery and sunny beaches.
-                    </span>
-                    <br>
-                    That's why our restaurant and bar are the perfect place to
-                    refuel and recharge during your stay.
-                </p>
-            </div>
-            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4  !ml-0 items-center">
-                <img
-                        class="object-cover rounded-full w-64 h-64"
-                        src="{% static 'img/test.jpg' %}"
-                        alt=""
-                />
-
-                <p class="md:text-lg text-blue">
-                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Market</span>
-                    <br>
-                    For those who like to keep things simple, our little market has everything you need to stock up for
-                    a day of hiking or camping. With fresh fruits and vegetables straight from the farmers of the local
-                    village, you can be sure you're fueling your body with the best.
-                </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
-                <p class="md:text-lg order-1 md:order-0 text-blue">
-                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Restaurant</span>
-                    <br>
-                    And for those who prefer a bit more variety, our restaurant offers delicious options all day long.
-                    <br>
-                    Start your day with a typical Turkish breakfast featuring omelettes or a refreshing smoothie bowl.
-                    As you soak up the sun on the beach, enjoy a fresh sandwich or a crisp salad from our lunch menu.
-                    And when evening rolls around, indulge in the catch of the day paired perfectly with a glass of
-                    raki.
-                </p>
-
-                <img
-                        class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
-                        src="{% static 'img/test.jpg' %}"
-                        alt=""
-                />
-            </div>
-
-            <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 !ml-0 items-center">
-                <img
-                        class="object-cover rounded-full w-64 h-64"
-                        src="{% static 'img/test.jpg' %}"
-                        alt=""
-                />
-
-                <p class="md:text-lg text-blue">
-                    <span class="font-special md:text-7xl text-5xl inline-block w-full text-yellow-kaki mt-2 text-center md:text-left">Bar</span>
-                    <br>
-                    But the real star of the show? Our bar, of course. From perfectly mixed Negronis to frozen
-                    strawberry
-                    daiquiris during happy hour, our cocktails are the perfect accompaniment to a stunning sunset. And
-                    for
-                    those who need a little boost in the morning, our freshly brewed coffee is sure to do the trick.
-                </p>
-            </div>
+            {% for content in contents %}
+            {% if content.text_position == content.CENTER %}
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 items-center {% if content.order == 1%}mb-8{%else%}mt-8{%endif%}">
+                    {{content.translated_text|safe}}
+                </div>
+            {% else %}
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0 items-center {% if content.order > 1 %}!ml-0{% endif %}">
+                    {% if content.picture and content.text_position == content.RIGHT %}
+                    <img
+                            class="object-cover rounded-full w-64 h-64"
+                            src="{{ content.picture.url }}"
+                            alt=""
+                    />
+                    {% endif %}
+    
+                    {{ content.translated_text|safe }}
+    
+                    {% if content.picture and content.text_position == content.LEFT %}
+                    <img
+                            class="object-cover rounded-full w-64 h-64 order-0 md:order-1"
+                            src="{{ content.picture.url }}"
+                            alt=""
+                    />
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </section>

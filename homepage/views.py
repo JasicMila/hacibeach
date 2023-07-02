@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Page, Image, ContactRequest
+from .models import Page, Image, ContactRequest, PageContent
 from django.utils import translation
 from django.conf import settings
 from django.utils.translation import get_language
@@ -12,22 +12,30 @@ from django.contrib import messages
 def home(request):
     language_code = translation.get_language_from_request(request, check_path=True)
     about = Page.objects.get(slug='about')
-    about_page_content = set_translations(about.pagecontent_set.first(), language_code)
+    about_page_content = set_single_translation(about.pagecontent_set.first(), language_code)
+    
+    beach = Page.objects.get(slug='beach')
+    beach_page_content = set_translations(beach.pagecontent_set.filter(), language_code)
+    
+    restaurant = Page.objects.get(slug='restaurant')
+    restaurant_page_content = set_translations(restaurant.pagecontent_set.filter(), language_code)
     
     stay = Page.objects.get(slug='stay')
-    stay_page_content = set_translations(about.pagecontent_set.first(), language_code)
+    stay_page_content = set_translations(stay.pagecontent_set.filter(), language_code)
+    
+#     logger = logging.getLogger(__name__)
+#     logger.debug(stay.id)
     
     context = {
         'about_page_content': about_page_content,
+        'beach_page_content': beach_page_content,
+        'restaurant_page_content': restaurant_page_content,
         'stay_page_content': stay_page_content,
         'language_code': language_code,
         'form': None
     }
     
-    logger = logging.getLogger(__name__)
-    
     if request.method == 'POST':
-        logger.debug('USAO 2')
         form = ContactForm(request.POST)
         
         if form.is_valid():
@@ -53,6 +61,12 @@ def home(request):
 
 
 def set_translations(content, language_code):
+    for data in content:
+        data = set_single_translation(data, language_code)
+    
+    return content    
+    
+def set_single_translation(content, language_code):
     # Now let's find the appropriate translations
     if language_code == 'tr':  # Turkish text is not stored as a translation
         content.translated_text = content.text
@@ -63,10 +77,7 @@ def set_translations(content, language_code):
         else:
             # If there is no translation in the chosen language, load the Turkish version
             content.translated_text = content.text
-
-#     logger = logging.getLogger(__name__)
-#     logger.debug(content)
-
+    
     return content
 
 def page_detail(request, slug):

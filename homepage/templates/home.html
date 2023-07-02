@@ -5,8 +5,8 @@
 {% block content %}
 {% include 'hero.html' %}
 {% include 'about.html' with content=about_page_content %}
-{% include 'beach.html' %}
-{% include 'restaurant.html' %}
-{% include 'stay.html' with content=stay_page_content %}
+{% include 'beach.html' with contents=beach_page_content %}
+{% include 'restaurant.html' with contents=restaurant_page_content %}
+{% include 'stay.html' with stay_contents=stay_page_content %}
 {% include 'contact.html' with form=form language_code=language_code %}
 {% endblock %}
