@@ -29,6 +29,6 @@
 
 @media only screen and (max-width: 480px) {
     .hero-img {
-        background-position: -350px 80%!important;
+        background-position: -440px 70px !important;
     }
 }
