@@ -20,7 +20,7 @@ msgstr ""
 
 #: homepage/templates/base.html:37
 msgid "About"
-msgstr "Um"
+msgstr "Über uns"
 
 #: homepage/templates/base.html:42
 msgid "Beach"
