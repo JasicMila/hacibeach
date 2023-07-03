@@ -41,7 +41,7 @@ msgstr "Galeri"
 #: homepage/templates/base.html:66 homepage/templates/contact.html:10
 #: homepage/templates/contact_success.html:8
 msgid "Contact"
-msgstr "Temas etmek"
+msgstr "İletişim"
 
 #: homepage/templates/contact.html:14
 msgid "Name"
@@ -57,7 +57,7 @@ msgstr "Mesaj"
 
 #: homepage/templates/contact.html:25
 msgid "Submit"
-msgstr "Göndermek"
+msgstr "Gönder"
 
 #: homepage/templates/contact_success.html:10
 msgid "Thank you for your message!"

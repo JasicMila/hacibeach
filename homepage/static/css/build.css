@@ -1264,6 +1264,12 @@ select {
   src: url('/static/fonts/bayshore.woff2') format('woff2'),
 }
 
+.flex-100 {
+  flex-basis: 256px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
 .errorlist li {
   color: #fa0000;
   font-size: 14px;
