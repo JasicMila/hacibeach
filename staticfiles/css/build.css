@@ -908,10 +908,6 @@ select {
   width: 16rem;
 }
 
-.w-\[600px\] {
-  width: 600px;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1291,6 +1287,12 @@ select {
   background: #79f0a7;
   text-align: center;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-img {
+    background-position: -350px 80%!important;
+  }
 }
 
 .before\:absolute::before {
