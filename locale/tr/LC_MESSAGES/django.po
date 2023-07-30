@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-14 16:49+0300\n"
+"POT-Creation-Date: 2023-07-30 06:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: homepage/templates/base.html:37
-msgid "About"
-msgstr "Hakkında"
+#: homepage/templates/about.html:24
+msgid "Hayat Hikâyesi"
+msgstr "Hayat Hikâyesi"
 
-#: homepage/templates/base.html:42
-msgid "Beach"
-msgstr "Plaj"
-
-#: homepage/templates/base.html:47
-msgid "Restaurant/Bar"
-msgstr "Yemek & Bar"
-
-#: homepage/templates/base.html:56
-msgid "Stay"
-msgstr "Konaklama"
-
-#: homepage/templates/base.html:61
-msgid "Gallery"
-msgstr "Galeri"
-
-#: homepage/templates/base.html:66 homepage/templates/contact.html:10
-#: homepage/templates/contact_success.html:8
-msgid "Contact"
+#: homepage/templates/contact.html:8
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact us"
 msgstr "İletişim"
 
-#: homepage/templates/contact.html:14
+#: homepage/templates/contact.html:21
 msgid "Name"
 msgstr "Ad"
 
-#: homepage/templates/contact.html:18
+#: homepage/templates/contact.html:27
 msgid "Email address"
 msgstr "E-posta adresi"
 
-#: homepage/templates/contact.html:22
+#: homepage/templates/contact.html:33
 msgid "Message"
 msgstr "Mesaj"
 
-#: homepage/templates/contact.html:25
+#: homepage/templates/contact.html:45
 msgid "Submit"
 msgstr "Gönder"
+
+#: homepage/templates/contact_success.html:8 homepage/templates/header.html:26
+#: homepage/templates/header.html:53
+msgid "Contact"
+msgstr "İletişim"
 
 #: homepage/templates/contact_success.html:10
 msgid "Thank you for your message!"
 msgstr "Mesajınız için teşekkür ederiz"
+
+#: homepage/templates/header.html:22 homepage/templates/header.html:49
+msgid "About"
+msgstr "Hakkında"
+
+#: homepage/templates/header.html:23 homepage/templates/header.html:50
+msgid "Beach"
+msgstr "Plaj"
+
+#: homepage/templates/header.html:24 homepage/templates/header.html:51
+msgid "Restaurant/Bar"
+msgstr "Yemek & Bar"
+
+#: homepage/templates/header.html:25 homepage/templates/header.html:52
+msgid "Stay"
+msgstr "Konaklama"
+
+#~ msgid "Gallery"
+#~ msgstr "Galeri"
 
 #~ msgid "English"
 #~ msgstr "İngilizce"

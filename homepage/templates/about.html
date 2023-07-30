@@ -1,22 +1,152 @@
 {% load static %}
-<section id='about' class="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0 bg-white-cream min-h-screen">
+{% load i18n %}
+<section id='about'
+         class="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0 bg-white-cream min-h-screen">
     <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
         <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100"
              fill="#FFFCF5" preserveAspectRatio="none slice">
             <path d="M50 0H100L50 100H0L50 0Z"></path>
         </svg>
         {% if content.picture %}
-            <img 
-                class="object-cover w-full md:w-[80%] ml-auto h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full" 
+        <img
+                class="object-cover w-full md:w-[80%] ml-auto h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
                 src="{{ content.picture.url }}"
                 alt="Haci"
-            >
+        >
         {% endif %}
-        
+
     </div>
     <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
         <div class="md:mb-16 lg:my-28 lg:max-w-lg lg:pr-5">
             {{ content.translated_text|safe }}
+
+
+            <h1 class="text-3xl italic">{% trans "Hayat Hikâyesi" %}</h1>
+            
+            <div class="relative mt-2 my-5  text-left">
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2005</div>
+                        <div class="md:flex space-x-1 text-xs text-gray-400">
+                            <div>-</div>
+                            <div>2008</div>
+                        </div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Beyaz Inci Beachpark Konyaalti</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2005 - 2008</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2008</div>
+                        <div class="md:flex space-x-1 text-xs text-gray-400">
+                            <div>-</div>
+                            <div>2010</div>
+                        </div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Vitamin Kafe Antalya</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2008 - 2010</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2010</div>
+                        <div class="md:flex space-x-1 text-xs text-gray-400">
+                            <div>-</div>
+                            <div>2015</div>
+                        </div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Sponge Pub & Sponge Meyhane Kaleiçi</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2010 - 2015</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2015</div>
+                        <div class="md:flex space-x-1 text-xs text-gray-400">
+                            <div>-</div>
+                            <div>2020</div>
+                        </div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Hacı Meyhane Konyaaltı</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2015 - 2020</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2020</div>
+                        <div class="md:flex space-x-1 text-xs text-gray-400">
+                            <div>-</div>
+                            <div>2023</div>
+                        </div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Hacı Meyhane Lara</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2020 - 2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="hidden md:block w-20">
+                        <div class="font-bold italic">2023</div>
+                    </div>
+
+                    <div class="border-r-2 border-black absolute h-full left-1 md:left-20 top-2 z-10">
+                        <div class="w-3 h-3 -left-[5px] rounded-full bg-black absolute"></div>
+                    </div>
+
+                    <div class="ml-10">
+                        <div class="font-semibold">Hacı Beach Mavikent</div>
+                        <div class="mb-4 mt-1 md:hidden">
+                            <div class="text-gray-400 text-sm">2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
